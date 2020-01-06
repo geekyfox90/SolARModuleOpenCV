@@ -30,7 +30,7 @@ pipeline {
 
         stage("Get Third Parties") {
             steps {
-                getThirdParties('1.0.0')
+                installDependency('opencv','3.4.3')
             }
         }        
 
