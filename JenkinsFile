@@ -17,13 +17,6 @@ pipeline {
             }
         }
 
-/*         stage("Get Third Parties") {
-            steps {
-                getThirdParties('1.0.0')
-            }
-        } */
-
-
         stage("Get Binaries") {
             steps {
                 script {
@@ -33,7 +26,13 @@ pipeline {
                      getBinaries(BRANCH,USERNAME,PASSWORD)
                 }
             }
-        }           
+        }
+
+        stage("Get Third Parties") {
+            steps {
+                getThirdParties('1.0.0')
+            }
+        }        
 
         stage("Build") {
             steps {
